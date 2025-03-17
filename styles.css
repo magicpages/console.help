@@ -1,0 +1,122 @@
+/* Additional custom styles can go here, though we're mostly using Tailwind CSS */
+
+/* Custom styles to match Magic Pages aesthetic */
+
+body {
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+}
+
+/* Add keyboard key styling */
+.key {
+  display: inline-block;
+  background-color: #f3f4f6;
+  color: #4b5563;
+  padding: 2px 8px;
+  margin: 0 2px;
+  border-radius: 4px;
+  font-family: monospace;
+  box-shadow: 0 1px 0 #d1d5db;
+  border: 1px solid #e5e7eb;
+}
+
+/* Button transitions */
+button {
+  transition: all 0.2s ease;
+}
+
+button:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+}
+
+button:active {
+  transform: translateY(1px);
+}
+
+/* Dropdown styling */
+select {
+  appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' stroke='%234b5563'%3E%3Cpath stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M19 9l-7 7-7-7'%3E%3C/path%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 0.5rem center;
+  background-size: 1.5em 1.5em;
+  padding-right: 2.5rem;
+}
+
+/* Card hover effects */
+.bg-white {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Remove the distracting hover shadow effects */
+.bg-gray-50:hover, 
+.bg-white:hover {
+  /* Remove this line:
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+  */
+}
+
+/* Magic Pages branding */
+.magicpages-logo {
+  display: inline-flex;
+  align-items: center;
+  font-weight: bold;
+}
+
+.magicpages-logo .magic {
+  color: #4f46e5;
+}
+
+.magicpages-logo .pages {
+  color: #10b981;
+}
+
+/* Highlight for the detected browser/OS */
+.highlight {
+  position: relative;
+  display: inline-block;
+}
+
+.highlight:after {
+  content: "";
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background-color: currentColor;
+}
+
+/* Toast notification styling */
+.toast-notification {
+  position: fixed;
+  bottom: 1rem;
+  right: 1rem;
+  background-color: #4f46e5;
+  color: white;
+  padding: 0.75rem 1rem;
+  border-radius: 0.5rem;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+  z-index: 50;
+  animation: slideIn 0.3s ease-out forwards;
+}
+
+@keyframes slideIn {
+  from {
+    transform: translateY(100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+/* Magic Pages gradient text */
+.text-gradient {
+  background: linear-gradient(90deg, #4f46e5, #6366f1);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-fill-color: transparent;
+} 

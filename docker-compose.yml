@@ -1,0 +1,14 @@
+version: '3'
+
+services:
+  console-help:
+    build: .
+    ports:
+      - "4343:4343"
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "wget", "-qO-", "http://localhost:4343"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 5s 
