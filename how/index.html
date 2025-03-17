@@ -60,45 +60,50 @@
     <div class="spinner"></div>
   </div>
 
-  <header class="py-6 bg-white border-b border-stone-100">
+  <header class="py-4 sm:py-6 bg-white border-b border-stone-100">
     <div class="container mx-auto px-4">
-      <div class="flex justify-between items-center">
-        <h1 class="text-3xl font-bold">
+      <div class="flex flex-col sm:flex-row sm:justify-between sm:items-center gap-3">
+        <h1 class="text-2xl sm:text-3xl font-bold">
           <a href="/" class="bg-gradient-to-r from-indigo-600 to-indigo-500 bg-clip-text text-transparent">console.help</a>
         </h1>
-        <a href="/" class="text-indigo-600 hover:text-indigo-700 transition-colors">← Back to Console Help</a>
+        <a href="/" class="text-indigo-600 hover:text-indigo-700 transition-colors flex items-center">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 mr-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18" />
+          </svg>
+          Back to Console Help
+        </a>
       </div>
     </div>
   </header>
 
-  <main class="flex-grow container mx-auto px-4 py-10">
+  <main class="flex-grow container mx-auto px-4 py-6 sm:py-10">
     <div class="max-w-3xl mx-auto">
-      <div class="bg-white rounded-xl p-8 shadow-md border border-gray-100">
-        <h2 class="text-2xl font-semibold mb-6">How Console.help Works</h2>
+      <div class="bg-white rounded-xl p-5 sm:p-8 shadow-md border border-gray-100">
+        <h2 class="text-xl sm:text-2xl font-semibold mb-4 sm:mb-6">How Console.help Works</h2>
         
-        <section class="mb-8">
-          <h3 class="text-xl font-semibold mb-3 text-indigo-600">The Origin Story</h3>
+        <section class="mb-6 sm:mb-8">
+          <h3 class="text-lg sm:text-xl font-semibold mb-2 sm:mb-3 text-indigo-600">The Origin Story</h3>
           <p class="mb-4">Picture this: It's late evening. I'm deep in troubleshooting mode with a customer who's experiencing an issue with their website.</p>
           <p class="mb-4">For what feels like the thousandth time, I start typing: "Could you check your browser console? Press F12... oh wait, are you on Mac? Then it's Command+Option+J. Using Firefox? That's different..." </p>
           <p class="mb-4">Every browser has its own way of doing the exact same thing! Why can't they all agree on one shortcut like Ctrl/Cmd+T for new tabs? That's when it hit me – there had to be a better way than this repetitive madness. And so, console.help was born.</p>
         </section>
 
-        <section class="mb-8">
-          <h3 class="text-xl font-semibold mb-3 text-indigo-600">How It Works</h3>
+        <section class="mb-6 sm:mb-8">
+          <h3 class="text-lg sm:text-xl font-semibold mb-2 sm:mb-3 text-indigo-600">How It Works</h3>
           <p class="mb-4">Console.help detects your browser and operating system (it's simple JavaScript, but it feels like magic when it just works).</p>
           <p class="mb-4">Then it shows you the exact keyboard shortcut and click sequence for YOUR specific setup. No more confusion, no more "press this, unless you're using that, in which case press something else entirely."</p>
           <p class="mb-4">Simply send anyone to console.help, and they'll get instructions customized to their exact environment. Problem solved!</p>
         </section>
 
-        <section class="mb-8">
-          <h3 class="text-xl font-semibold mb-3 text-indigo-600">Why I Built This</h3>
+        <section class="mb-6 sm:mb-8">
+          <h3 class="text-lg sm:text-xl font-semibold mb-2 sm:mb-3 text-indigo-600">Why I Built This</h3>
           <p class="mb-4">As the founder of <a href="https://www.magicpages.co/" target="_blank" class="text-indigo-600 hover:text-indigo-700 transition-colors">Magic Pages</a> (a managed Ghost CMS hosting service), I help people troubleshoot their websites every day.</p>
           <p class="mb-4">Every support conversation that includes "Can you check your browser console?" used to require multiple messages just explaining how to open it. Now I just send them to console.help and we can focus on solving their actual problem together.</p>
           <p class="mb-4">It's saved countless back-and-forth messages and made support so much smoother. Since it's been so helpful for me, I made it public for everyone else dealing with the same inconsistencies.</p>
         </section>
 
-        <section class="mb-8">
-          <h3 class="text-xl font-semibold mb-3 text-indigo-600">Who's Behind This?</h3>
+        <section class="mb-6 sm:mb-8">
+          <h3 class="text-lg sm:text-xl font-semibold mb-2 sm:mb-3 text-indigo-600">Who's Behind This?</h3>
           <p class="mb-4">I'm <a href="https://jannis.io/" target="_blank" class="text-indigo-600 hover:text-indigo-700 transition-colors">Jannis</a>, a web developer and entrepreneur who got tired of explaining different browser console shortcuts over and over again.</p>
           <p class="mb-4">When I'm not creating tiny web utilities to solve specific frustrations, I'm running <a href="https://www.magicpages.co/" target="_blank" class="text-indigo-600 hover:text-indigo-700 transition-colors">Magic Pages</a>, where I help publishers create beautiful websites and newsletters with Ghost CMS.</p>
           <p class="mb-4">Want to see what else I'm working on? Check out <a href="https://jannis.io/" target="_blank" class="text-indigo-600 hover:text-indigo-700 transition-colors">my blog</a> where I share insights and adventures as a solo founder (spoiler: mostly it's just me rambling about my own problems).</p>
@@ -114,14 +119,14 @@
     </div>
   </main>
 
-  <footer class="bg-white py-6 mt-10 border-t border-stone-100">
+  <footer class="bg-white py-4 sm:py-6 mt-6 sm:mt-10 border-t border-stone-100">
     <div class="container mx-auto px-4 text-center">
       <div class="flex flex-col items-center">
-        <a href="https://www.magicpages.co/" target="_blank" class="mb-3">
-          <img src="https://www.magicpages.co/assets/images/magicpages_logo-light.svg" alt="Magic Pages" class="h-8">
+        <a href="https://www.magicpages.co/" target="_blank" class="mb-2 sm:mb-3">
+          <img src="https://www.magicpages.co/assets/images/magicpages_logo-light.svg" alt="Magic Pages" class="h-6 sm:h-8">
         </a>
-        <p class="mb-3 text-gray-600">© 2025 by <a href="https://www.magicpages.co/" target="_blank" class="text-indigo-600 hover:text-indigo-700 transition-colors font-medium">Magic Pages</a></p>
-        <p class="text-sm text-gray-500">
+        <p class="mb-2 sm:mb-3 text-gray-600 text-sm sm:text-base">© 2025 by <a href="https://www.magicpages.co/" target="_blank" class="text-indigo-600 hover:text-indigo-700 transition-colors font-medium">Magic Pages</a></p>
+        <p class="text-xs sm:text-sm text-gray-500">
           <a href="https://www.magicpages.co/legal/" target="_blank" class="text-indigo-600 hover:text-indigo-700 transition-colors font-medium">Imprint</a>
         </p>
       </div>
