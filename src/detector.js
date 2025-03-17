@@ -1,7 +1,6 @@
 // Browser detection function
 function detectBrowser() {
   const userAgent = navigator.userAgent;
-  console.log("User Agent:", userAgent);
   
   if (userAgent.indexOf("Firefox") > -1) {
     return "firefox";
@@ -250,27 +249,19 @@ function formatShortcut(shortcut, os) {
 // Update the UI with detected browser and OS
 function updateUI() {
   try {
-    console.log("Updating UI...");
     const browserName = detectBrowser();
     const osName = detectOS();
-    
-    console.log("Detected browser:", browserName);
-    console.log("Detected OS:", osName);
     
     // Update browser name
     const browserElement = document.getElementById("browser-name");
     if (browserElement) {
       browserElement.textContent = consoleInfo[browserName]?.name || browserName;
-    } else {
-      console.error("Could not find browser-name element");
     }
     
     // Update OS name
     const osElement = document.getElementById("os-name");
     if (osElement) {
       osElement.textContent = formatOSName(osName);
-    } else {
-      console.error("Could not find os-name element");
     }
     
     // Get browser/OS specific info
@@ -285,8 +276,6 @@ function updateUI() {
       } else {
         shortcutElement.textContent = "Not available for this browser/OS combination";
       }
-    } else {
-      console.error("Could not find keyboard-shortcut element");
     }
     
     // Update right-click method
@@ -318,8 +307,6 @@ function updateUI() {
       } else {
         rightClickElement.innerHTML = '<li>Not available for this browser/OS combination</li>';
       }
-    } else {
-      console.error("Could not find right-click-method element");
     }
     
     // Set the select elements to match the detected values
@@ -352,8 +339,6 @@ function updateUI() {
 
 // Update console info based on dropdown selections
 function updateConsoleInfo(browser, os) {
-  console.log("Updating console info for:", browser, os);
-  
   // Update browser name
   const browserElement = document.getElementById("browser-name");
   if (browserElement) {

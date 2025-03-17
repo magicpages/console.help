@@ -11,7 +11,6 @@ import { initPageTransitions } from './transitions.js';
 
 // Font loading detection
 document.fonts.ready.then(() => {
-  console.log('Fonts loaded');
   document.documentElement.classList.add('fonts-loaded');
   
   // Hide preloader
@@ -27,8 +26,6 @@ document.fonts.ready.then(() => {
 
 // Wait for DOM to be ready
 document.addEventListener('DOMContentLoaded', () => {
-  console.log('Main page loaded');
-  
   // Initialize page transitions
   initPageTransitions();
   
