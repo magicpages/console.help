@@ -63,6 +63,7 @@ Console.help provides straightforward instructions for accessing the browser dev
 - `dist/styles.css` - Compiled and minified CSS
 - `Dockerfile` - Docker configuration
 - `docker-compose.yml` - Docker Compose configuration
+- `how.html` - Page explaining the technical details and browser detection
 
 ## License
 

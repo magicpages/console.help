@@ -1,4 +1,4 @@
-FROM node:18-alpine
+FROM node:18-alpine as build
 
 WORKDIR /app
 
@@ -6,22 +6,20 @@ WORKDIR /app
 COPY package*.json ./
 RUN npm install
 
-# Copy configuration files
-COPY tailwind.config.js ./
+# Copy all source files
+COPY . .
 
-# Copy source files
-COPY src ./src
-COPY *.html ./
-COPY *.js ./
-
-# Build CSS
+# Build for production
 RUN npm run build
 
-# Create dist directory if it doesn't exist
-RUN mkdir -p dist
+# Use a lightweight server to serve the static files
+FROM nginx:alpine
 
-# Expose port for the app
-EXPOSE 4343
+# Copy built files from the build stage
+COPY --from=build /app/dist /usr/share/nginx/html
 
-# Start the http-server
-CMD ["npm", "run", "start:prod"] 
+# Expose port 80
+EXPOSE 80
+
+# Start nginx
+CMD ["nginx", "-g", "daemon off;"] 

@@ -1,0 +1,118 @@
+@import '@fontsource/inter';
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Add custom styles here */
+.key {
+  display: inline-block;
+  background-color: #f9fafb;
+  border: 1px solid #e5e7eb;
+  border-radius: 4px;
+  padding: 2px 8px;
+  font-size: 0.9em;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+}
+
+/* Add any other custom styles here */
+.or-separator {
+  display: inline-block;
+  color: #6b7280; /* text-gray-500 */
+  font-weight: normal;
+  margin: 0 0.5rem;
+  font-size: 0.9em;
+  vertical-align: middle;
+}
+
+/* Hide content until fully loaded */
+.content-loading {
+  opacity: 0;
+  transition: opacity 0.2s ease-in-out;
+}
+
+.content-loaded {
+  opacity: 1;
+}
+
+/* Add a simple loading spinner */
+.loading-spinner {
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  border: 2px solid rgba(79, 70, 229, 0.2);
+  border-radius: 50%;
+  border-top-color: #4f46e5;
+  animation: spin 1s ease-in-out infinite;
+  margin-right: 10px;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+/* Class to show only during loading */
+.loading-only {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem 0;
+}
+
+/* Hide this when content is loaded */
+.content-loaded .loading-only {
+  display: none;
+}
+
+/* Page transition effects */
+html.transition,
+html.transition *,
+html.transition *:before,
+html.transition *:after {
+  transition: all 300ms !important;
+  transition-delay: 0ms !important;
+}
+
+/* Page fade out effect */
+.page-transition-out {
+  opacity: 0;
+  transform: translateY(20px);
+}
+
+/* Overlay for smoother transitions */
+#page-transition-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #f9fafb;
+  z-index: 9999;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 300ms ease;
+}
+
+#page-transition-overlay.active {
+  opacity: 1;
+  pointer-events: all;
+}
+
+/* Simple fade in for content */
+.fade-in {
+  animation: fadeIn 0.5s ease-in forwards;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+/* Hide content initially */
+.content-invisible {
+  @apply opacity-0;
+}
+
+/* Show content when ready */
+.content-visible {
+  @apply opacity-100 transition-opacity duration-300;
+} 

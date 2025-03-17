@@ -4,15 +4,70 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Console Help - How to open your browser's developer console</title>
-  <link rel="stylesheet" href="node_modules/@fontsource/inter/index.css">
-  <link rel="stylesheet" href="dist/styles.css">
+  <script defer data-domain="console.help" src="https://stats.fedoruk-betschki.com/js/script.js"></script>
+  <style>
+    /* Critical CSS to prevent FOUC */
+    html, body { visibility: hidden; }
+    .no-fouc { visibility: hidden; }
+    .fonts-loaded html, .fonts-loaded body { visibility: visible; }
+    
+    /* Basic fallback styles */
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      background-color: #f9fafb;
+      color: #111827;
+      margin: 0;
+      padding: 0;
+    }
+    
+    /* Preloader */
+    #preloader {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: #f9fafb;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      z-index: 9999;
+      visibility: visible;
+      opacity: 1;
+      transition: opacity 0.3s, visibility 0.3s;
+    }
+    
+    .spinner {
+      width: 40px;
+      height: 40px;
+      border: 3px solid rgba(79, 70, 229, 0.2);
+      border-top-color: #4f46e5;
+      border-radius: 50%;
+      animation: spin 1s linear infinite;
+    }
+    
+    @keyframes spin {
+      to { transform: rotate(360deg); }
+    }
+  </style>
+  <link rel="preload" href="/src/styles/main.css" as="style">
+  <link rel="preload" href="/@fontsource/inter/index.css" as="style">
+  <link rel="preload" href="/@fontsource/inter/files/inter-latin-400-normal.woff2" as="font" crossorigin>
+  <link rel="preload" href="/@fontsource/inter/files/inter-latin-600-normal.woff2" as="font" crossorigin>
 </head>
-<body class="bg-gray-50 text-gray-900 min-h-screen flex flex-col font-sans">
+<body class="no-fouc">
+  <div id="preloader">
+    <div class="spinner"></div>
+  </div>
+
   <header class="py-6 bg-white border-b border-stone-100">
     <div class="container mx-auto px-4">
-      <h1 class="text-3xl font-bold text-center">
-        <span class="bg-gradient-to-r from-indigo-600 to-indigo-500 bg-clip-text text-transparent">console.help</span>
-      </h1>
+      <div class="flex justify-between items-center">
+        <h1 class="text-3xl font-bold text-center">
+          <span class="bg-gradient-to-r from-indigo-600 to-indigo-500 bg-clip-text text-transparent">console.help</span>
+        </h1>
+        <a href="/how/" class="text-indigo-600 hover:text-indigo-700 transition-colors">How it works</a>
+      </div>
     </div>
   </header>
 
@@ -23,16 +78,24 @@
         
         <div class="mb-8">
           <h3 class="text-xl font-semibold mb-3">Option 1: Keyboard Shortcut</h3>
-          <div class="bg-gray-50 p-5 rounded-lg border border-gray-200">
-            <div class="text-xl" id="keyboard-shortcut">Loading...</div>
+          <div class="bg-gray-50 p-5 rounded-lg border border-gray-200 content-loader">
+            <div class="text-xl" id="keyboard-shortcut">
+              <div class="flex items-center text-gray-400">
+                <span class="loading-spinner"></span>
+                Detecting your browser...
+              </div>
+            </div>
           </div>
         </div>
         
         <div class="mb-8">
           <h3 class="text-xl font-semibold mb-3">Option 2: Right-click Method</h3>
-          <div class="bg-gray-50 p-5 rounded-lg border border-gray-200">
+          <div class="bg-gray-50 p-5 rounded-lg border border-gray-200 content-loader">
             <ol class="list-decimal list-inside space-y-3" id="right-click-method">
-              <li>Loading...</li>
+              <li class="flex items-center text-gray-400">
+                <span class="loading-spinner"></span>
+                Detecting your browser...
+              </li>
             </ol>
           </div>
         </div>
@@ -102,6 +165,6 @@
     </div>
   </footer>
 
-  <script src="script.js"></script>
+  <script type="module" src="/src/main.js"></script>
 </body>
-</html> 
+</html>

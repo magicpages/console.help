@@ -4,10 +4,10 @@ services:
   console-help:
     build: .
     ports:
-      - "4343:4343"
+      - "4343:80"
     restart: unless-stopped
     healthcheck:
-      test: ["CMD", "wget", "-qO-", "http://localhost:4343"]
+      test: ["CMD", "wget", "-qO-", "http://localhost"]
       interval: 30s
       timeout: 10s
       retries: 3

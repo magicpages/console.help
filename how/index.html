@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>How Console.help Works</title>
+  <script defer data-domain="console.help" src="https://stats.fedoruk-betschki.com/js/script.js"></script>
+  <style>
+    /* Critical CSS to prevent FOUC */
+    html, body { visibility: hidden; }
+    .no-fouc { visibility: hidden; }
+    .fonts-loaded html, .fonts-loaded body { visibility: visible; }
+    
+    /* Basic fallback styles */
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      background-color: #f9fafb;
+      color: #111827;
+      margin: 0;
+      padding: 0;
+    }
+    
+    /* Preloader */
+    #preloader {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: #f9fafb;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      z-index: 9999;
+      visibility: visible;
+      opacity: 1;
+      transition: opacity 0.3s, visibility 0.3s;
+    }
+    
+    .spinner {
+      width: 40px;
+      height: 40px;
+      border: 3px solid rgba(79, 70, 229, 0.2);
+      border-top-color: #4f46e5;
+      border-radius: 50%;
+      animation: spin 1s linear infinite;
+    }
+    
+    @keyframes spin {
+      to { transform: rotate(360deg); }
+    }
+  </style>
+  <link rel="preload" href="/src/styles/main.css" as="style">
+  <link rel="preload" href="/@fontsource/inter/index.css" as="style">
+  <link rel="preload" href="/@fontsource/inter/files/inter-latin-400-normal.woff2" as="font" crossorigin>
+  <link rel="preload" href="/@fontsource/inter/files/inter-latin-600-normal.woff2" as="font" crossorigin>
+</head>
+<body class="bg-gray-50 text-gray-900 min-h-screen flex flex-col font-sans no-fouc">
+  <div id="preloader">
+    <div class="spinner"></div>
+  </div>
+
+  <header class="py-6 bg-white border-b border-stone-100">
+    <div class="container mx-auto px-4">
+      <div class="flex justify-between items-center">
+        <h1 class="text-3xl font-bold">
+          <a href="/" class="bg-gradient-to-r from-indigo-600 to-indigo-500 bg-clip-text text-transparent">console.help</a>
+        </h1>
+        <a href="/" class="text-indigo-600 hover:text-indigo-700 transition-colors">← Back to Console Help</a>
+      </div>
+    </div>
+  </header>
+
+  <main class="flex-grow container mx-auto px-4 py-10">
+    <div class="max-w-3xl mx-auto">
+      <div class="bg-white rounded-xl p-8 shadow-md border border-gray-100">
+        <h2 class="text-2xl font-semibold mb-6">How Console.help Works</h2>
+        
+        <section class="mb-8">
+          <h3 class="text-xl font-semibold mb-3 text-indigo-600">The Origin Story</h3>
+          <p class="mb-4">Picture this: It's late evening. I'm deep in troubleshooting mode with a customer who's experiencing an issue with their website.</p>
+          <p class="mb-4">For what feels like the thousandth time, I start typing: "Could you check your browser console? Press F12... oh wait, are you on Mac? Then it's Command+Option+J. Using Firefox? That's different..." </p>
+          <p class="mb-4">Every browser has its own way of doing the exact same thing! Why can't they all agree on one shortcut like Ctrl/Cmd+T for new tabs? That's when it hit me – there had to be a better way than this repetitive madness. And so, console.help was born.</p>
+        </section>
+
+        <section class="mb-8">
+          <h3 class="text-xl font-semibold mb-3 text-indigo-600">How It Works</h3>
+          <p class="mb-4">Console.help detects your browser and operating system (it's simple JavaScript, but it feels like magic when it just works).</p>
+          <p class="mb-4">Then it shows you the exact keyboard shortcut and click sequence for YOUR specific setup. No more confusion, no more "press this, unless you're using that, in which case press something else entirely."</p>
+          <p class="mb-4">Simply send anyone to console.help, and they'll get instructions customized to their exact environment. Problem solved!</p>
+        </section>
+
+        <section class="mb-8">
+          <h3 class="text-xl font-semibold mb-3 text-indigo-600">Why I Built This</h3>
+          <p class="mb-4">As the founder of <a href="https://www.magicpages.co/" target="_blank" class="text-indigo-600 hover:text-indigo-700 transition-colors">Magic Pages</a> (a managed Ghost CMS hosting service), I help people troubleshoot their websites every day.</p>
+          <p class="mb-4">Every support conversation that includes "Can you check your browser console?" used to require multiple messages just explaining how to open it. Now I just send them to console.help and we can focus on solving their actual problem together.</p>
+          <p class="mb-4">It's saved countless back-and-forth messages and made support so much smoother. Since it's been so helpful for me, I made it public for everyone else dealing with the same inconsistencies.</p>
+        </section>
+
+        <section class="mb-8">
+          <h3 class="text-xl font-semibold mb-3 text-indigo-600">Who's Behind This?</h3>
+          <p class="mb-4">I'm <a href="https://jannis.io/" target="_blank" class="text-indigo-600 hover:text-indigo-700 transition-colors">Jannis</a>, a web developer and entrepreneur who got tired of explaining different browser console shortcuts over and over again.</p>
+          <p class="mb-4">When I'm not creating tiny web utilities to solve specific frustrations, I'm running <a href="https://www.magicpages.co/" target="_blank" class="text-indigo-600 hover:text-indigo-700 transition-colors">Magic Pages</a>, where I help publishers create beautiful websites and newsletters with Ghost CMS.</p>
+          <p class="mb-4">Want to see what else I'm working on? Check out <a href="https://jannis.io/" target="_blank" class="text-indigo-600 hover:text-indigo-700 transition-colors">my blog</a> where I share insights and adventures as a solo founder (spoiler: mostly it's just me rambling about my own problems).</p>
+        </section>
+
+        <section>
+          <h3 class="text-xl font-semibold mb-3 text-indigo-600">Is It Really That Simple?</h3>
+          <p class="mb-4">Yep! That's literally it. No ads, no tracking (beyond basic analytics using the privacy-friendly <a href="https://plausible.io/" target="_blank" class="text-indigo-600 hover:text-indigo-700 transition-colors">Plausible</a>), no ulterior motives. Just a simple tool that does one thing well: helps people open their browser console without the usual headache.</p>
+          <p class="mb-4">Feel free to share it with your team, your customers, your grandma...basically, anyone who needs to open their browser console.</p> 
+          <p>Now go forth and console with confidence! 🚀</p>
+        </section>
+      </div>
+    </div>
+  </main>
+
+  <footer class="bg-white py-6 mt-10 border-t border-stone-100">
+    <div class="container mx-auto px-4 text-center">
+      <div class="flex flex-col items-center">
+        <a href="https://www.magicpages.co/" target="_blank" class="mb-3">
+          <img src="https://www.magicpages.co/assets/images/magicpages_logo-light.svg" alt="Magic Pages" class="h-8">
+        </a>
+        <p class="mb-3 text-gray-600">© 2025 by <a href="https://www.magicpages.co/" target="_blank" class="text-indigo-600 hover:text-indigo-700 transition-colors font-medium">Magic Pages</a></p>
+        <p class="text-sm text-gray-500">
+          <a href="https://www.magicpages.co/legal/" target="_blank" class="text-indigo-600 hover:text-indigo-700 transition-colors font-medium">Imprint</a>
+        </p>
+      </div>
+    </div>
+  </footer>
+
+  <script type="module" src="/src/how.js"></script>
+</body>
+</html>
